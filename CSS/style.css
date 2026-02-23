@@ -242,56 +242,47 @@ body {
 
 .table-container {
   width: 100%;
-  max-width: 750px;
+  max-width: 600px;
   margin: 0 auto;
-  border-radius: 35px;
+  border-radius: 20px; /* Sudut melengkung sesuai gambar */
   overflow: hidden;
-  box-shadow: 0 25px 55px rgba(106, 13, 173, 0.15);
-  border: 1px solid var(--purple-border);
+  box-shadow: 0 10px 40px rgba(106, 13, 173, 0.12);
+  border: 1px solid #f0e6ff;
 }
 
 .mukarata-table-wide {
   width: 100%;
   border-collapse: collapse;
-  background: white;
 }
 
-.mukarata-table-wide th {
-  padding: 30px 20px;
-  text-align: left;
-  font-size: var(--size-table);
-  font-weight: 800;
-}
-
+/* Kolom Kiri (Fitur Utama) */
 .mukarata-table-wide th:first-child {
-  background: #f8f6ff;
-  color: var(--purple-main);
-  width: 40%;
+  background: #fdfbff; /* Warna latar sangat terang */
+  color: #6a0dad;
+  text-align: left;
+  padding: 18px;
+  font-weight: 700;
 }
 
+/* Header Kolom Kanan (Mukarata Pro V2.5) */
 .mukarata-table-wide th.highlight-col {
-  background: var(--purple-main);
+  background: #6a0dad; /* Warna ungu solid */
   color: white;
   text-align: center;
+  padding: 18px;
+}
+
+/* Sel Teks di Kolom Kanan */
+.pro-cell {
+  color: #6a0dad !important; /* Teks berwarna ungu */
+  font-weight: 700;
+  text-align: left;
 }
 
 .mukarata-table-wide td {
-  padding: 25px 20px;
-  border-bottom: 1px solid var(--purple-border);
-  font-size: var(--size-table);
-  color: #444;
-}
-
-.pro-cell {
-  background: var(--purple-light);
-  font-weight: 700;
-  color: var(--purple-main) !important;
-  text-align: left;
-  border-left: 3px solid var(--purple-border);
-}
-
-.mukarata-table-wide tbody tr:last-child td {
-  border-bottom: none;
+  padding: 15px 18px;
+  border-bottom: 1px solid #f0e6ff; /* Garis pemisah halus */
+  font-size: 0.95rem;
 }
 
 /* =========================================
@@ -306,21 +297,42 @@ body {
 .benefit-item {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 25px;
-  padding: 30px;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
   background: #ffffff;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  border: 1px solid #f9f9f9;
+  border-radius: 12px; /* Melengkung halus */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
 }
 
+/* Ikon Centang Hijau dalam Kotak */
 .check-icon { 
-  font-size: 1.5rem; 
-  min-width: 40px; 
-  color: var(--purple-main);
+  background: #76ba1b; /* Warna hijau daun sesuai gambar */
+  color: white;
+  min-width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
+
+.benefit-text h3 {
+  font-size: 1.05rem;
+  color: #4b0082; /* Ungu tua */
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.benefit-text p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
 
 .btn-mukarata {
   padding: 22px 55px;
