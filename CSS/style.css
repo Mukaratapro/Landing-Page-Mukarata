@@ -1,3 +1,20 @@
+/* Pastikan body mengambil ruang penuh */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Mencegah geser kanan-kiri yang tidak rapi */
+}
+
+/* Kunci agar elemen utama tidak menciut */
+.content-wrapper, .info-section {
+    width: 100%;
+    max-width: 480px; /* Standar lebar layar HP */
+    margin: 0 auto;   /* Membuat konten rata tengah */
+    padding: 20px;
+}
+
 /* =========================================
    1. RESET & BASE
    ========================================= */
