@@ -308,3 +308,64 @@ body {
   .video-wrapper { border-radius: 25px; border-width: 4px; }
   .benefit-item { padding: 15px; }
 }
+/* Styling Tombol Hero yang dilingkari merah */
+.hero-content .btn-mukarata {
+    display: inline-block;
+    padding: 18px 45px; /* Lebih besar */
+    background: linear-gradient(135deg, #6a0dad, #a020f0);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.4rem; /* Font lebih besar sesuai request */
+    font-weight: 800;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.4);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.hero-content .btn-mukarata:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(106, 13, 173, 0.6);
+}
+
+/* Teks Deskripsi di bawah Judul Utama */
+.info-section .description {
+    font-size: 1.2rem; /* Font diperbesar agar mudah dibaca */
+    line-height: 1.8;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Box Benefit yang dilingkari merah */
+.benefit-item {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Shadow halus seperti di gambar */
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(10px);
+    border-left: 5px solid #6a0dad;
+}
+
+.benefit-content b {
+    font-size: 1.25rem; /* Judul benefit lebih besar */
+    color: #6a0dad;
+}
+
+.benefit-content p {
+    font-size: 1.05rem;
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
