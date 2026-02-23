@@ -1,6 +1,18 @@
 /* =========================================
    1. RESET & BASE (PERBAIKAN MANX)
    ========================================= */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block; /* Memastikan body tidak menciut */
+}
+
 * {
   margin: 0;
   padding: 0;
