@@ -1,30 +1,28 @@
-/* Pastikan body mengambil ruang penuh */
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden; /* Mencegah geser kanan-kiri yang tidak rapi */
-}
-
-/* Kunci agar elemen utama tidak menciut */
-.content-wrapper, .info-section {
-    width: 100%;
-    max-width: 480px; /* Standar lebar layar HP */
-    margin: 0 auto;   /* Membuat konten rata tengah */
-    padding: 20px;
-}
-
 /* =========================================
-   1. RESET & BASE
+   1. RESET & BASE (PERBAIKAN MANX)
    ========================================= */
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Sangat penting agar padding tidak merusak lebar */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #ffffff;
   color: #333333;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Mencegah layar goyang kanan-kiri */
+  line-height: 1.5;
+}
+
+/* Memastikan konten tetap lebar tapi tidak pecah di layar besar */
+.content-wrapper, .info-section, .cta-container {
+  width: 100%;
+  max-width: 600px; /* Ukuran ditingkatkan agar lebih lega di HP modern */
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* =========================================
@@ -32,7 +30,7 @@ body {
    ========================================= */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* Memastikan Hero memenuhi satu layar penuh */
   width: 100%;
   overflow: hidden;
   background: #000;
@@ -41,33 +39,18 @@ body {
 .hero video {
   width: 100%;
   height: 100%;
+  object-fit: cover; /* Video dipaksa memenuhi layar tanpa menciut */
+}
+
+/* Perbaikan Video Gallery agar tidak terlihat kecil */
+.video-item video {
+  width: 100%;
+  aspect-ratio: 16 / 9; 
   object-fit: cover;
+  border-radius: 15px;
+  display: block;
 }
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-  width: 90%;
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #ffffff;
-  margin-bottom: 30px;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
-}
 
 /* =========================================
    3. VIDEO CONTAINER (UNTUK VIDEO TENGAH)
