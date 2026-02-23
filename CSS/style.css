@@ -1,21 +1,42 @@
 /* =========================================
-   1. RESET & BASE
+   1. RESET & BASE (ENGINEER OPTIMIZED)
    ========================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  /* Design Tokens untuk Ukuran Font Ideal */
+  --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Fluid Typography: Ukuran otomatis menyesuaikan layar */
+  --size-h1: clamp(2.2rem, 8vw, 3.8rem);    /* Judul Hero */
+  --size-h2: clamp(1.6rem, 5vw, 2.4rem);    /* Judul Section */
+  --size-body: clamp(1rem, 2.5vw, 1.2rem);  /* Teks Deskripsi */
+  --size-table: clamp(0.9rem, 2vw, 1.05rem); /* Teks Tabel */
+  --size-btn: clamp(1rem, 2vw, 1.2rem);     /* Teks Tombol */
+  
+  /* Brand Colors */
+  --purple-main: #6a0dad;
+  --purple-light: #fdfbff;
+  --purple-border: #f0e6ff;
+  --purple-gradient: linear-gradient(135deg, #6a0dad, #9d50bb);
+  
+  /* Spacing Tokens */
+  --space-section: clamp(60px, 10vw, 100px);
 }
 
 body {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: var(--font-main);
   background: #ffffff;
   color: #333333;
   overflow-x: hidden;
-  line-height: 1.5;
+  line-height: 1.7; /* Line height renggang = Kesan Mewah */
 }
 
 /* =========================================
@@ -27,60 +48,67 @@ body {
   width: 100%;
   overflow: hidden;
   background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  z-index: 3;
   text-align: center;
-  z-index: 2;
   width: 90%;
+  max-width: 900px;
 }
 
 .hero h1 {
-  font-size: 2.2rem;
+  font-size: var(--size-h1);
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  margin-bottom: 10px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  line-height: 1.1;
 }
 
 .hero p {
   color: #ffffff;
-  margin-bottom: 30px;
-  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-.mute-control {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  cursor: pointer;
+  font-size: var(--size-body);
+  max-width: 650px;
+  margin: 0 auto 40px;
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0.95;
 }
 
 /* =========================================
-   3. VIDEO CONTAINER (BESAR & DOMINAN)
+   3. VIDEO CONTAINER (DOMINAN PORTRAIT)
    ========================================= */
 .video-slide-section {
-  padding: 20px 10px;
+  padding: var(--space-section) 15px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: #ffffff;
   width: 100%;
 }
@@ -88,12 +116,13 @@ body {
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 700px; /* Sesuai permintaan Anda */
+  max-width: 600px; /* Diperlebar sedikit agar lebih dominan */
   aspect-ratio: 9 / 16;
-  border-radius: 25px;
+  border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(106, 13, 173, 0.2);
+  box-shadow: 0 30px 60px rgba(106, 13, 173, 0.25);
   background: #f0f0f0;
+  border: 8px solid var(--purple-light);
 }
 
 .video-wrapper video {
@@ -104,64 +133,69 @@ body {
 }
 
 /* =========================================
-   4. INFO & INTRO SECTION
+   4. INFO & INTRO SECTION (TEXT UPGRADE)
    ========================================= */
 .info-section { 
-  padding: 40px 20px; 
+  padding: var(--space-section) 25px; 
   text-align: center; 
+  background: #ffffff;
 }
 
 .content-wrapper {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .highlight { 
-  color: #6a0dad; 
-  font-size: 1.4rem; 
-  font-weight: bold; 
+  color: var(--purple-main); 
+  font-size: var(--size-h2); 
+  font-weight: 900; 
   text-transform: uppercase; 
-  margin-bottom: 15px; 
+  margin-bottom: 25px; 
+  display: block;
 }
 
 .description { 
-  color: #666; 
-  font-size: 1rem; 
-  line-height: 1.6; 
-  max-width: 500px; 
+  color: #555; 
+  font-size: var(--size-body); 
+  line-height: 1.8; 
+  max-width: 600px; 
   margin: 0 auto; 
 }
 
 .section-title {
-  color: #6a0dad;
-  font-size: 1.6rem;
+  color: var(--purple-main);
+  font-size: var(--size-h2);
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .intro-text {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: var(--size-body);
+  line-height: 1.8;
   color: #333333;
   text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* =========================================
-   5. GALLERY SECTION (VERTIKAL BESAR)
+   5. GALLERY SECTION (VERTIKAL PRECISI)
    ========================================= */
 .gallery-section {
-  padding: 50px 15px;
-  background: #fdfbff;
+  padding: var(--space-section) 15px;
+  background: var(--purple-light);
   text-align: center;
 }
 
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Memaksa 1 kolom agar besar ke bawah */
-  gap: 30px;
-  margin-top: 30px;
+  grid-template-columns: 1fr;
+  gap: 45px;
+  margin-top: 40px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -169,46 +203,51 @@ body {
 
 .video-item {
   background: #ffffff;
-  padding: 15px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
+  padding: 25px;
+  border-radius: 35px;
+  box-shadow: 0 15px 40px rgba(106, 13, 173, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.video-item:hover {
+  transform: translateY(-10px);
 }
 
 .video-item video {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 20px;
   display: block;
 }
 
 .video-item span {
   display: block;
-  margin-top: 15px;
-  font-weight: bold;
-  color: #6a0dad;
-  font-size: 1rem;
+  margin-top: 25px;
+  font-weight: 800;
+  color: var(--purple-main);
+  font-size: 1.1rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* =========================================
-   6. TABEL KOMPARASI (MEMANJANG VERTIKAL)
+   6. TABEL KOMPARASI (ENGINEER STYLE)
    ========================================= */
 .comparison-section {
-  padding: 50px 15px;
+  padding: var(--space-section) 15px;
   background: #ffffff;
 }
 
 .table-container {
   width: 100%;
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto;
-  border-radius: 25px;
+  border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(106, 13, 173, 0.15);
-  border: 1px solid #f0e6ff;
+  box-shadow: 0 25px 55px rgba(106, 13, 173, 0.15);
+  border: 1px solid var(--purple-border);
 }
 
 .mukarata-table-wide {
@@ -218,95 +257,156 @@ body {
 }
 
 .mukarata-table-wide th {
-  padding: 25px 15px; /* Padding besar agar memanjang */
+  padding: 30px 20px;
   text-align: left;
-  font-size: 1rem;
+  font-size: var(--size-table);
+  font-weight: 800;
 }
 
 .mukarata-table-wide th:first-child {
-  background: #f4eeff;
-  color: #6a0dad;
+  background: #f8f6ff;
+  color: var(--purple-main);
   width: 40%;
 }
 
 .mukarata-table-wide th.highlight-col {
-  background: #6a0dad;
+  background: var(--purple-main);
   color: white;
   text-align: center;
 }
 
 .mukarata-table-wide td {
-  padding: 22px 15px; /* Baris lebih tinggi/panjang */
-  border-bottom: 1px solid #f0e6ff;
-  font-size: 1rem;
+  padding: 25px 20px;
+  border-bottom: 1px solid var(--purple-border);
+  font-size: var(--size-table);
   color: #444;
 }
 
 .pro-cell {
-  background: #fdfbff;
-  font-weight: bold;
-  color: #6a0dad !important;
+  background: var(--purple-light);
+  font-weight: 700;
+  color: var(--purple-main) !important;
   text-align: left;
-  border-left: 2px solid #f0e6ff;
+  border-left: 3px solid var(--purple-border);
 }
 
-.mukarata-table-wide tbody tr:nth-child(even) {
-  background-color: #fafafa;
+.mukarata-table-wide tbody tr:last-child td {
+  border-bottom: none;
 }
 
 /* =========================================
-   7. BENEFIT LIST & CTA
+   7. BENEFIT LIST & CTA (MAXIMAL UI)
    ========================================= */
 .benefit-list {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px 10px;
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
 .benefit-item {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding: 20px;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding: 30px;
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   text-align: left;
+  border: 1px solid #f9f9f9;
 }
 
-.check-icon { font-size: 1.3rem; min-width: 30px; }
+.check-icon { 
+  font-size: 1.5rem; 
+  min-width: 40px; 
+  color: var(--purple-main);
+}
 
-.btn, .btn-mukarata {
-  padding: 18px 40px;
-  background: linear-gradient(135deg, #6a0dad, #9d50bb);
+.btn-mukarata {
+  padding: 22px 55px;
+  background: var(--purple-gradient);
   color: white;
   text-decoration: none;
-  border-radius: 50px;
-  font-weight: bold;
+  border-radius: 100px;
+  font-weight: 900;
+  font-size: var(--size-btn);
   display: inline-block;
-  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.3);
-  transition: 0.3s;
+  box-shadow: 0 15px 35px rgba(106, 13, 173, 0.4);
+  transition: all 0.4s ease;
   cursor: pointer;
   border: none;
-  min-width: 280px;
+  width: 100%;
+  max-width: 400px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-mukarata:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(106, 13, 173, 0.5);
 }
 
 .final-cta {
-  padding: 80px 20px;
+  padding: var(--space-section) 20px;
   text-align: center;
+  background: #ffffff;
 }
 
 .cta-heading {
-  color: #6a0dad;
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 20px;
+  color: var(--purple-main);
+  font-size: var(--size-h2);
+  font-weight: 900;
+  margin-bottom: 25px;
 }
 
 .cta-footer-note {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #9d50bb;
-  margin-top: 20px;
+  margin-top: 30px;
   font-style: italic;
+  font-weight: 500;
+}
+
+/* =========================================
+   8. UI CONTROLS (MUTE & FLOATING)
+   ========================================= */
+.mute-control {
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.mute-control:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   9. RESPONSIVE ADJUSTMENTS
+   ========================================= */
+@media (max-width: 600px) {
+  :root {
+    --space-section: 50px;
+  }
+  
+  .hero-content h1 {
+    letter-spacing: 1px;
+  }
+  
+  .video-wrapper {
+    border-radius: 25px;
+    border-width: 4px;
+  }
 }
