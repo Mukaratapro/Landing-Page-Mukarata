@@ -10,24 +10,21 @@
 }
 
 :root {
-  /* Design Tokens untuk Ukuran Font Ideal */
   --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
-  /* Fluid Typography: Ukuran otomatis menyesuaikan layar */
-  --size-h1: clamp(2.2rem, 8vw, 3.8rem);    /* Judul Hero */
-  --size-h2: clamp(1.6rem, 5vw, 2.4rem);    /* Judul Section */
-  --size-body: clamp(1rem, 2.5vw, 1.2rem);  /* Teks Deskripsi */
-  --size-table: clamp(0.9rem, 2vw, 1.05rem); /* Teks Tabel */
-  --size-btn: clamp(1rem, 2vw, 1.2rem);     /* Teks Tombol */
+  /* Ukuran Font Diperbesar Secara Strategis */
+  --size-h1: clamp(2.5rem, 9vw, 4.2rem);    
+  --size-h2: clamp(1.8rem, 6vw, 2.6rem);    
+  --size-body: clamp(1.1rem, 2.8vw, 1.35rem); 
+  --size-table: clamp(1rem, 2.2vw, 1.15rem); 
+  --size-btn: clamp(1.1rem, 2.2vw, 1.35rem);  
   
-  /* Brand Colors */
   --purple-main: #6a0dad;
   --purple-light: #fdfbff;
   --purple-border: #f0e6ff;
   --purple-gradient: linear-gradient(135deg, #6a0dad, #9d50bb);
   
-  /* Spacing Tokens */
-  --space-section: clamp(60px, 10vw, 100px);
+  --space-section: clamp(70px, 12vw, 120px);
 }
 
 body {
@@ -36,11 +33,11 @@ body {
   background: #ffffff;
   color: #333333;
   overflow-x: hidden;
-  line-height: 1.7; /* Line height renggang = Kesan Mewah */
+  line-height: 1.8;
 }
 
 /* =========================================
-   2. HERO SECTION (VIDEO FULLSCREEN)
+   2. HERO SECTION
    ========================================= */
 .hero {
   position: relative;
@@ -55,20 +52,14 @@ body {
 
 .hero video {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover;
   z-index: 1;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.45);
   z-index: 2;
 }
@@ -92,17 +83,8 @@ body {
   line-height: 1.1;
 }
 
-.hero p {
-  color: #ffffff;
-  font-size: var(--size-body);
-  max-width: 650px;
-  margin: 0 auto 40px;
-  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-  opacity: 0.95;
-}
-
 /* =========================================
-   3. VIDEO CONTAINER (DOMINAN PORTRAIT)
+   3. VIDEO SLIDE (DOMINAN PORTRAIT)
    ========================================= */
 .video-slide-section {
   padding: var(--space-section) 15px;
@@ -110,144 +92,38 @@ body {
   flex-direction: column;
   align-items: center;
   background: #ffffff;
-  width: 100%;
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 600px; /* Diperlebar sedikit agar lebih dominan */
+  max-width: 600px;
   aspect-ratio: 9 / 16;
   border-radius: 35px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(106, 13, 173, 0.25);
-  background: #f0f0f0;
   border: 8px solid var(--purple-light);
 }
 
 .video-wrapper video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 100%; object-fit: cover; display: block;
 }
 
 /* =========================================
-   4. INFO & INTRO SECTION (TEXT UPGRADE)
-   ========================================= */
-.info-section { 
-  padding: var(--space-section) 25px; 
-  text-align: center; 
-  background: #ffffff;
-}
-
-.content-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.highlight { 
-  color: var(--purple-main); 
-  font-size: var(--size-h2); 
-  font-weight: 900; 
-  text-transform: uppercase; 
-  margin-bottom: 25px; 
-  display: block;
-}
-
-.description { 
-  color: #555; 
-  font-size: var(--size-body); 
-  line-height: 1.8; 
-  max-width: 600px; 
-  margin: 0 auto; 
-}
-
-.section-title {
-  color: var(--purple-main);
-  font-size: var(--size-h2);
-  font-weight: 800;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.intro-text {
-  font-size: var(--size-body);
-  line-height: 1.8;
-  color: #333333;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* =========================================
-   5. GALLERY SECTION (VERTIKAL PRECISI)
-   ========================================= */
-.gallery-section {
-  padding: var(--space-section) 15px;
-  background: var(--purple-light);
-  text-align: center;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 45px;
-  margin-top: 40px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.video-item {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 35px;
-  box-shadow: 0 15px 40px rgba(106, 13, 173, 0.1);
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.video-item:hover {
-  transform: translateY(-10px);
-}
-
-.video-item video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
-}
-
-.video-item span {
-  display: block;
-  margin-top: 25px;
-  font-weight: 800;
-  color: var(--purple-main);
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* =========================================
-   6. TABEL KOMPARASI (ENGINEER STYLE)
+   6. TABEL KOMPARASI (PRESISI & BESAR)
    ========================================= */
 .comparison-section {
   padding: var(--space-section) 15px;
-  background: #ffffff;
 }
 
 .table-container {
-  width: 100%;
-  max-width: 600px;
+  width: 95%;
+  max-width: 650px;
   margin: 0 auto;
-  border-radius: 20px; /* Sudut melengkung sesuai gambar */
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(106, 13, 173, 0.12);
-  border: 1px solid #f0e6ff;
+  box-shadow: 0 12px 45px rgba(106, 13, 173, 0.15);
+  border: 1px solid var(--purple-border);
 }
 
 .mukarata-table-wide {
@@ -255,188 +131,143 @@ body {
   border-collapse: collapse;
 }
 
-/* Kolom Kiri (Fitur Utama) */
-.mukarata-table-wide th:first-child {
-  background: #fdfbff; /* Warna latar sangat terang */
-  color: #6a0dad;
-  text-align: left;
-  padding: 18px;
-  font-weight: 700;
+.mukarata-table-wide th, .mukarata-table-wide td {
+  padding: 22px 20px;
+  font-size: var(--size-table);
 }
 
-/* Header Kolom Kanan (Mukarata Pro V2.5) */
+.mukarata-table-wide th:first-child {
+  background: var(--purple-light);
+  color: var(--purple-main);
+  text-align: left;
+  font-weight: 800;
+}
+
 .mukarata-table-wide th.highlight-col {
-  background: #6a0dad; /* Warna ungu solid */
+  background: var(--purple-main);
   color: white;
   text-align: center;
-  padding: 18px;
 }
 
-/* Sel Teks di Kolom Kanan */
 .pro-cell {
-  color: #6a0dad !important; /* Teks berwarna ungu */
-  font-weight: 700;
+  color: var(--purple-main) !important;
+  font-weight: 800;
   text-align: left;
-}
-
-.mukarata-table-wide td {
-  padding: 15px 18px;
-  border-bottom: 1px solid #f0e6ff; /* Garis pemisah halus */
-  font-size: 0.95rem;
 }
 
 /* =========================================
-   7. BENEFIT LIST & CTA (MAXIMAL UI)
+   7. BENEFIT LIST (RAPID & CLEAN)
    ========================================= */
 .benefit-list {
-/* Container Utama */
-.benefit-list {
-  max-width: 600px;
-  margin: 40px auto;
+  max-width: 650px;
+  margin: 50px auto;
   padding: 0 20px;
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Judul Section */
 .section-title-benefit {
-  color: #6a0dad;
+  color: var(--purple-main);
   text-align: center;
-  font-weight: 800;
+  font-weight: 900;
+  font-size: var(--size-h2);
   text-transform: uppercase;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
+  margin-bottom: 40px;
 }
 
-/* Gaya Kartu Per Item */
 .benefit-item {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
-  margin-bottom: 15px;
-  padding: 20px;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 28px;
   background: #ffffff;
-  border-radius: 15px; /* Sudut membulat halus */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
-  border: 1px solid #f0f0f0;
-  text-align: left;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f5f5f5;
 }
 
-/* Kotak Centang Hijau (Sesuai Gambar) */
 .check-box { 
-  background: #76ba1b; /* Hijau terang sesuai gambar */
+  background: #76ba1b; 
   color: white;
-  min-width: 26px;
-  height: 26px;
-  border-radius: 5px;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
-/* Pengaturan Teks */
 .benefit-content b {
-  color: #6a0dad; /* Warna ungu untuk judul item */
-  font-size: 1.05rem;
+  color: var(--purple-main);
+  font-size: 1.25rem;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .benefit-content p {
-  color: #555555;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-
-.btn-mukarata {
-  padding: 22px 55px;
-  background: var(--purple-gradient);
-  color: white;
-  text-decoration: none;
-  border-radius: 100px;
-  font-weight: 900;
-  font-size: var(--size-btn);
-  display: inline-block;
-  box-shadow: 0 15px 35px rgba(106, 13, 173, 0.4);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  border: none;
-  width: 100%;
-  max-width: 400px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn-mukarata:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 20px 45px rgba(106, 13, 173, 0.5);
-}
-
+/* =========================================
+   8. FINAL CTA (PROFESSIONAL FIX)
+   ========================================= */
 .final-cta {
   padding: var(--space-section) 20px;
   text-align: center;
-  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cta-heading {
   color: var(--purple-main);
   font-size: var(--size-h2);
   font-weight: 900;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
 }
 
-.cta-footer-note {
-  font-size: 0.95rem;
-  color: #9d50bb;
-  margin-top: 30px;
-  font-style: italic;
-  font-weight: 500;
-}
-
-/* =========================================
-   8. UI CONTROLS (MUTE & FLOATING)
-   ========================================= */
-.mute-control {
-  position: absolute;
-  bottom: 35px;
-  right: 35px;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  cursor: pointer;
+.btn-mukarata {
+  padding: 24px 60px;
+  background: var(--purple-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 900;
+  font-size: var(--size-btn);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
+  box-shadow: 0 20px 40px rgba(106, 13, 173, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  max-width: 450px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-.mute-control:hover {
-  background: rgba(255, 255, 255, 0.4);
+.btn-mukarata:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(106, 13, 173, 0.5);
+}
+
+.cta-footer-note {
+  font-size: 1.1rem;
+  color: #9d50bb;
+  margin-top: 30px;
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.8;
 }
 
 /* =========================================
-   9. RESPONSIVE ADJUSTMENTS
+   9. RESPONSIVE
    ========================================= */
 @media (max-width: 600px) {
-  :root {
-    --space-section: 50px;
-  }
-  
-  .hero-content h1 {
-    letter-spacing: 1px;
-  }
-  
-  .video-wrapper {
-    border-radius: 25px;
-    border-width: 4px;
-  }
+  .benefit-item { padding: 20px; }
+  .btn-mukarata { width: 95%; padding: 20px 30px; }
 }
