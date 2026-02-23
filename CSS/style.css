@@ -289,11 +289,25 @@ body {
    7. BENEFIT LIST & CTA (MAXIMAL UI)
    ========================================= */
 .benefit-list {
-  max-width: 750px;
-  margin: 50px auto;
+/* Container Utama */
+.benefit-list {
+  max-width: 600px;
+  margin: 40px auto;
   padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* Judul Section */
+.section-title-benefit {
+  color: #6a0dad;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Gaya Kartu Per Item */
 .benefit-item {
   display: flex;
   align-items: flex-start;
@@ -301,36 +315,40 @@ body {
   margin-bottom: 15px;
   padding: 20px;
   background: #ffffff;
-  border-radius: 12px; /* Melengkung halus */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 15px; /* Sudut membulat halus */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
   border: 1px solid #f0f0f0;
+  text-align: left;
 }
 
-/* Ikon Centang Hijau dalam Kotak */
-.check-icon { 
-  background: #76ba1b; /* Warna hijau daun sesuai gambar */
+/* Kotak Centang Hijau (Sesuai Gambar) */
+.check-box { 
+  background: #76ba1b; /* Hijau terang sesuai gambar */
   color: white;
-  min-width: 25px;
-  height: 25px;
-  border-radius: 4px;
+  min-width: 26px;
+  height: 26px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 14px;
   font-weight: bold;
-  font-size: 0.8rem;
+  margin-top: 3px;
 }
 
-.benefit-text h3 {
+/* Pengaturan Teks */
+.benefit-content b {
+  color: #6a0dad; /* Warna ungu untuk judul item */
   font-size: 1.05rem;
-  color: #4b0082; /* Ungu tua */
-  margin-bottom: 4px;
-  font-weight: 800;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.benefit-text p {
-  font-size: 0.9rem;
-  color: #555;
+.benefit-content p {
+  color: #555555;
+  font-size: 0.95rem;
   line-height: 1.5;
+  margin: 0;
 }
 
 
