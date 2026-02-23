@@ -19,10 +19,10 @@ body {
 
 /* Memastikan konten tetap lebar tapi tidak pecah di layar besar */
 .content-wrapper, .info-section, .cta-container {
-  width: 100%;
-  max-width: 600px; /* Ukuran ditingkatkan agar lebih lega di HP modern */
-  margin: 0 auto;
-  padding: 20px;
+    width: 100%;
+    max-width: 100%; /* Ubah dari 480px ke 100% agar fleksibel */
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* =========================================
@@ -44,7 +44,8 @@ body {
 
 /* Perbaikan Video Gallery agar tidak terlihat kecil */
 .video-item video {
-  width: 100%;
+    width: 100%;
+    height: 100%;
   aspect-ratio: 16 / 9; 
   object-fit: cover;
   border-radius: 15px;
