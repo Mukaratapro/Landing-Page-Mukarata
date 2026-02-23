@@ -223,39 +223,73 @@ body {
 /* =========================================
    7. BENEFIT LIST & CTA (CLEAN LAYOUT)
    ========================================= */
+/* Container Utama Benefit */
 .benefit-list {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 0 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
+/* Judul Section Benefit */
 .section-title-benefit {
-  color: var(--purple-main); text-align: center;
-  font-weight: 800; text-transform: uppercase;
-  margin-bottom: 30px;
+    color: #6a0dad;
+    text-align: center;
+    font-size: 2.2rem; /* Font diperbesar */
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
+/* Kartu Benefit (Bagian yang dilingkari merah di gambar) */
 .benefit-item {
-  display: flex; align-items: flex-start; gap: 15px;
-  margin-bottom: 15px; padding: 20px;
-  background: #ffffff; border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f0f0f0;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Shadow halus sesuai referensi gambar */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
 }
 
-.check-box { 
-  background: #76ba1b; color: white;
-  min-width: 26px; height: 26px; border-radius: 5px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: bold; margin-top: 3px; flex-shrink: 0;
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(106, 13, 173, 0.15);
 }
 
+/* Styling Centang Hijau */
+.check-box {
+    background: #4CAF50;
+    color: white;
+    min-width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* Konten Teks */
 .benefit-content b {
-  color: var(--purple-main); font-size: 1.05rem;
-  display: block; margin-bottom: 5px;
+    display: block;
+    font-size: 1.4rem; /* Judul lebih besar */
+    color: #6a0dad;
+    margin-bottom: 5px;
 }
 
-.benefit-content p { color: #555; font-size: 0.95rem; margin: 0; }
+.benefit-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
 
 /* =========================================
    8. FINAL CTA
